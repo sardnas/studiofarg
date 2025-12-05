@@ -15,35 +15,36 @@ import {
   Typography,
 } from '@mui/material'
 
+const menuContent = {
+  '0000000001': {
+    id: '0000000001',
+    title: 'The Sims 4 CC Build Mode',
+    content: ['This is the content related to The Sims 4 Build Mode.'],
+    links: ['The Gallery', 'Custom Content', 'Mods'],
+    icon: <SportsEsportsIcon />,
+    image: simshouse,
+  },
+  '0000000002': {
+    id: '0000000002',
+    title: 'The Sims 4 CC Assecories',
+    content: ['This is the content related to The Sims 4 Build Mode.'],
+    links: ['Patterns', 'Ravelry'],
+    icon: <FavoriteIcon />,
+    image: simshouse,
+  },
+  '0000000003': {
+    id: '0000000003',
+    title: 'About me',
+    content: ['About me.'],
+    links: ['GitHub', 'LinkedIn'],
+    icon: <TerminalIcon />,
+    image: simshouse,
+  },
+}
+
 export const Menu = ({ style }) => {
   const [menuItems, setMenuItems] = useState({})
   const [activeItem, setActiveItem] = useState()
-  const menuContent = {
-    '0000000001': {
-      id: '0000000001',
-      title: 'The Sims 4 CC Build Mode',
-      content: ['This is the content related to The Sims 4 Build Mode.'],
-      links: ['The Gallery', 'Custom Content', 'Mods'],
-      icon: <SportsEsportsIcon />,
-      image: simshouse,
-    },
-    '0000000002': {
-      id: '0000000002',
-      title: 'The Sims 4 CC Assecories',
-      content: ['This is the content related to The Sims 4 Build Mode.'],
-      links: ['Patterns', 'Ravelry'],
-      icon: <FavoriteIcon />,
-      image: simshouse,
-    },
-    '0000000003': {
-      id: '0000000003',
-      title: 'About me',
-      content: ['About me.'],
-      links: ['GitHub', 'LinkedIn'],
-      icon: <TerminalIcon />,
-      image: simshouse,
-    },
-  }
   useEffect(() => {
     setMenuItems(menuContent)
   }, [])
