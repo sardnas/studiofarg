@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Content } from "./Content";
-import { Welcome } from "./Welcome";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
@@ -12,8 +11,6 @@ import {
   ListItemText,
   ListItemIcon,
   Typography,
-  ButtonGroup,
-  Button,
 } from "@mui/material";
 
 const menuContent = {
