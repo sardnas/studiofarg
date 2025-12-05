@@ -1,14 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Content } from './Content'
 import { Welcome } from './Welcome'
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import simshouse from "./simshouse.jpg";
-import simsselfie from "./simsselfie.png";
-import sweater from "./sweater.webp";
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import TerminalIcon from '@mui/icons-material/Terminal'
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
+import simshouse from './simshouse.jpg'
 import {
-  Container,
   Card,
   CardContent,
   List,
@@ -24,27 +21,27 @@ export const Menu = ({ style }) => {
   const menuContent = {
     '0000000001': {
       id: '0000000001',
-      title: 'The Sims 4',
-      content: ['This is the content related to The Sims 4.'],
+      title: 'The Sims 4 CC Build Mode',
+      content: ['This is the content related to The Sims 4 Build Mode.'],
       links: ['The Gallery', 'Custom Content', 'Mods'],
-      icon: <SportsEsportsIcon/>,
-      image: simshouse
+      icon: <SportsEsportsIcon />,
+      image: simshouse,
     },
     '0000000002': {
       id: '0000000002',
-      title: 'Art & crafts',
-      content: ['Here you can find my published patterns etc.'],
+      title: 'The Sims 4 CC Assecories',
+      content: ['This is the content related to The Sims 4 Build Mode.'],
       links: ['Patterns', 'Ravelry'],
-      icon: <FavoriteIcon/>,
-      image: sweater
+      icon: <FavoriteIcon />,
+      image: simshouse,
     },
     '0000000003': {
       id: '0000000003',
-      title: 'Coding',
-      content: ['I work as a developer.'],
+      title: 'About me',
+      content: ['About me.'],
       links: ['GitHub', 'LinkedIn'],
-      icon: <TerminalIcon/>,
-      image: simsselfie
+      icon: <TerminalIcon />,
+      image: simshouse,
     },
   }
   useEffect(() => {
@@ -59,9 +56,7 @@ export const Menu = ({ style }) => {
             {Object.keys(menuItems).map((key) => {
               return (
                 <ListItemButton key={key} onClick={() => setActiveItem(key)}>
-                  <ListItemIcon>
-                    {menuItems[key].icon}
-                  </ListItemIcon>
+                  <ListItemIcon>{menuItems[key].icon}</ListItemIcon>
                   <ListItemText primary={menuItems[key].title} />
                 </ListItemButton>
               )
@@ -76,9 +71,10 @@ export const Menu = ({ style }) => {
               title={menuItems[activeItem].title}
             />
           )}
-          <Typography style={{marginTop:'1rem'}} color='#ac4c79'>You can contact me at: sandra@studiofarg.com</Typography>
+          <Typography style={{ marginTop: '1rem' }} color='#ac4c79'>
+            You can contact me at: sandra@studiofarg.com
+          </Typography>
         </CardContent>
-        
       </Card>
     </Fragment>
   )
