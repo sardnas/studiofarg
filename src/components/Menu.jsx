@@ -12,6 +12,8 @@ import {
   ListItemText,
   ListItemIcon,
   Typography,
+  ButtonGroup,
+  Button,
 } from "@mui/material";
 
 const menuContent = {
@@ -19,26 +21,33 @@ const menuContent = {
     id: "0000000001",
     title: "The Sims 4 CC Build Mode",
     content: ["This is the content related to The Sims 4 Build Mode."],
-    links: ["The Gallery", "Custom Content", "Mods"],
-    icon: <SportsEsportsIcon />,
+    links: ["Some link here", "Another link"],
+    icon: <SportsEsportsIcon sx={{ color: "secondary.main" }} />,
   },
   "0000000002": {
     id: "0000000002",
-    title: "The Sims 4 CC Assecories",
-    content: ["This is the content related to The Sims 4 Build Mode."],
-    links: ["Patterns", "Ravelry"],
-    icon: <FavoriteIcon />,
+    title: "The Sims 4 CC Accessories",
+    content: ["This is the content related to The Sims 4 CAS."],
+    links: ["Some link here", "Another link"],
+    icon: <FavoriteIcon sx={{ color: "secondary.main" }} />,
   },
   "0000000003": {
     id: "0000000003",
+    title: "The Sims 4 Animations",
+    content: ["This is the content related to The Sims 4 Animations."],
+    links: ["Some link here", "Another link"],
+    icon: <TerminalIcon sx={{ color: "secondary.main" }} />,
+  },
+  "0000000004": {
+    id: "0000000004",
     title: "About me",
     content: ["About me."],
-    links: ["GitHub", "LinkedIn"],
-    icon: <TerminalIcon />,
+    links: ["Some link here", "Another link"],
+    icon: <TerminalIcon sx={{ color: "secondary.main" }} />,
   },
 };
 
-export const Menu = ({ style }) => {
+export const Menu = () => {
   const [menuItems, setMenuItems] = useState({});
   const [activeItem, setActiveItem] = useState();
   useEffect(() => {
@@ -46,9 +55,9 @@ export const Menu = ({ style }) => {
   }, []);
   return (
     <Fragment>
-      <Card style={style}>
+      <Card>
         <CardContent>
-          <Welcome />
+          <Typography variant="h1">Menu</Typography>
           <List>
             {Object.keys(menuItems).map((key) => {
               return (

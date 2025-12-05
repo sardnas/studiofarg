@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactComponent as Pinterest } from "../images/pinterest.svg";
 const style = {
   display: "flex",
   justifyContent: "space-evenly",
@@ -9,9 +8,5 @@ const style = {
 };
 
 export const SocialMedia = () => {
-  return (
-    <div style={style}>
-      <Pinterest />
-    </div>
-  );
+  return <div style={style}></div>;
 };
