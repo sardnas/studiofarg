@@ -1,10 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import { Content } from './Content'
-import { Welcome } from './Welcome'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import TerminalIcon from '@mui/icons-material/Terminal'
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
-import simshouse from './simshouse.jpg'
+import React, { Fragment, useState, useEffect } from "react";
+import { Content } from "./Content";
+import { Welcome } from "./Welcome";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import {
   Card,
   CardContent,
@@ -13,41 +12,38 @@ import {
   ListItemText,
   ListItemIcon,
   Typography,
-} from '@mui/material'
+} from "@mui/material";
 
 const menuContent = {
-  '0000000001': {
-    id: '0000000001',
-    title: 'The Sims 4 CC Build Mode',
-    content: ['This is the content related to The Sims 4 Build Mode.'],
-    links: ['The Gallery', 'Custom Content', 'Mods'],
+  "0000000001": {
+    id: "0000000001",
+    title: "The Sims 4 CC Build Mode",
+    content: ["This is the content related to The Sims 4 Build Mode."],
+    links: ["The Gallery", "Custom Content", "Mods"],
     icon: <SportsEsportsIcon />,
-    image: simshouse,
   },
-  '0000000002': {
-    id: '0000000002',
-    title: 'The Sims 4 CC Assecories',
-    content: ['This is the content related to The Sims 4 Build Mode.'],
-    links: ['Patterns', 'Ravelry'],
+  "0000000002": {
+    id: "0000000002",
+    title: "The Sims 4 CC Assecories",
+    content: ["This is the content related to The Sims 4 Build Mode."],
+    links: ["Patterns", "Ravelry"],
     icon: <FavoriteIcon />,
-    image: simshouse,
   },
-  '0000000003': {
-    id: '0000000003',
-    title: 'About me',
-    content: ['About me.'],
-    links: ['GitHub', 'LinkedIn'],
+  "0000000003": {
+    id: "0000000003",
+    title: "About me",
+    content: ["About me."],
+    links: ["GitHub", "LinkedIn"],
     icon: <TerminalIcon />,
-    image: simshouse,
   },
-}
+};
 
 export const Menu = ({ style }) => {
-  const [menuItems, setMenuItems] = useState({})
-  const [activeItem, setActiveItem] = useState()
+  const [menuItems, setMenuItems] = useState({});
+  const [activeItem, setActiveItem] = useState();
   useEffect(() => {
-    setMenuItems(menuContent)
-  }, [])
+    setMenuItems(menuContent);
+  }, []);
   return (
     <Fragment>
       <Card style={style}>
@@ -60,7 +56,7 @@ export const Menu = ({ style }) => {
                   <ListItemIcon>{menuItems[key].icon}</ListItemIcon>
                   <ListItemText primary={menuItems[key].title} />
                 </ListItemButton>
-              )
+              );
             })}
           </List>
           {menuItems[activeItem] && (
@@ -68,15 +64,14 @@ export const Menu = ({ style }) => {
               key={activeItem}
               content={menuItems[activeItem].content}
               links={menuItems[activeItem].links}
-              image={menuItems[activeItem].image}
               title={menuItems[activeItem].title}
             />
           )}
-          <Typography style={{ marginTop: '1rem' }} color='#ac4c79'>
+          <Typography style={{ marginTop: "1rem" }}>
             You can contact me at: sandra@studiofarg.com
           </Typography>
         </CardContent>
       </Card>
     </Fragment>
-  )
-}
+  );
+};
